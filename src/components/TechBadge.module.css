@@ -1,0 +1,18 @@
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  background-color: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  border: 1px solid rgba(45, 156, 219, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.learning {
+  background-color: rgba(45, 156, 219, 0.06);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+  font-style: italic;
+}
