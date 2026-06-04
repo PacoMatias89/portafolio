@@ -1,6 +1,7 @@
 .section {
   padding: var(--section-padding);
   background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
 }
 
 .inner {
@@ -11,22 +12,23 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .category {
-  background-color: var(--color-bg-card);
+  background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 1.25rem 1.5rem;
 }
 
 .categoryLabel {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-accent);
-  font-weight: 600;
+  font-weight: 700;
+  font-family: var(--font-mono);
   margin-bottom: 0.875rem;
 }
 

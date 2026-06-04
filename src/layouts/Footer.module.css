@@ -2,6 +2,7 @@
   border-top: 1px solid var(--color-border);
   padding: 2rem 1.5rem;
   margin-top: auto;
+  background-color: var(--color-bg);
 }
 
 .inner {
@@ -27,6 +28,7 @@
 .links a {
   font-size: 0.82rem;
   color: var(--color-text-muted);
+  font-weight: 500;
 }
 
 .links a:hover {

@@ -1,6 +1,7 @@
 .section {
   padding: var(--section-padding);
   background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
 }
 
 .inner {
@@ -24,11 +25,12 @@
 .paragraph {
   font-size: 0.95rem;
   color: var(--color-text-muted);
-  line-height: 1.75;
+  line-height: 1.8;
+  max-width: 65ch;
 }
 
 .quickInfo {
-  background-color: var(--color-bg-card);
+  background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
@@ -44,20 +46,22 @@
 }
 
 .infoLabel {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   color: var(--color-text-muted);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .infoValue {
   font-size: 0.875rem;
   color: var(--color-text);
+  font-weight: 500;
 }
 
 .infoLink {
   font-size: 0.875rem;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {

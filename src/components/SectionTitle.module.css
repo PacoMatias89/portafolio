@@ -1,23 +1,31 @@
 .wrapper {
   margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  order: 0;
+  width: 32px;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+  margin-bottom: 0.875rem;
 }
 
 .title {
-  font-size: 1.75rem;
+  order: 1;
+  font-size: 1.875rem;
   font-weight: 700;
   color: var(--color-text);
+  letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
+  order: 2;
   font-size: 0.95rem;
   color: var(--color-text-muted);
-  margin-bottom: 1rem;
-}
-
-.line {
-  width: 40px;
-  height: 3px;
-  background-color: var(--color-accent);
-  border-radius: 2px;
+  max-width: 520px;
+  line-height: 1.7;
 }

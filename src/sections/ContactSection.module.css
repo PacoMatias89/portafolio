@@ -1,6 +1,7 @@
 .section {
   padding: var(--section-padding);
   background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
 }
 
 .inner {
@@ -17,41 +18,43 @@
 .lead {
   font-size: 1rem;
   color: var(--color-text-muted);
-  line-height: 1.7;
+  line-height: 1.75;
+  max-width: 55ch;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 0.875rem;
 }
 
 .contactCard {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  background-color: var(--color-bg-card);
+  background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 1rem 1.25rem;
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition);
   color: inherit;
 }
 
 a.contactCard:hover {
   border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
 }
 
 .contactLabel {
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   color: var(--color-text-muted);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .contactValue {
-  font-size: 0.88rem;
+  font-size: 0.875rem;
   color: var(--color-text);
   font-weight: 500;
   word-break: break-all;
@@ -63,15 +66,17 @@ a.contactCard:hover {
   padding: 0.75rem 2rem;
   background-color: var(--color-accent);
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9rem;
   border-radius: var(--radius-md);
-  transition: background-color var(--transition);
+  transition: background-color var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.2);
 }
 
 .cta:hover {
   background-color: var(--color-accent-dark);
   color: #fff;
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
 }
 
 @media (max-width: 480px) {
