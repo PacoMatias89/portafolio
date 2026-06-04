@@ -70,13 +70,29 @@ a.contactCard:hover {
   font-size: 0.9rem;
   border-radius: var(--radius-md);
   transition: background-color var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+[data-theme='light'] .cta {
   box-shadow: 0 2px 8px rgba(29, 78, 216, 0.2);
+}
+
+[data-theme='dark'] .cta {
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
 .cta:hover {
   background-color: var(--color-accent-dark);
   color: #fff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+[data-theme='light'] .cta:hover {
   box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+}
+
+[data-theme='dark'] .cta:hover {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
 }
 
 @media (max-width: 480px) {

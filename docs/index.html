@@ -5,8 +5,12 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portafolio</title>
-    <script type="module" crossorigin src="/assets/index-Bf9t2vk3.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-1M5k_1KI.css">
+    <script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
+    <script type="module" crossorigin src="/assets/index-6nnk6mkw.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BxFCFLM8.css">
   </head>
   <body>
     <div id="root"></div>

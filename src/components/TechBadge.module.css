@@ -3,11 +3,19 @@
   padding: 0.3rem 0.75rem;
   background-color: var(--color-tag-bg);
   color: var(--color-tag-text);
-  border: 1px solid rgba(29, 78, 216, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.15);
   border-radius: var(--radius-sm);
   font-size: 0.82rem;
   font-weight: 500;
   white-space: nowrap;
+}
+
+[data-theme='light'] .badge {
+  border-color: rgba(29, 78, 216, 0.15);
+}
+
+[data-theme='dark'] .badge {
+  border-color: rgba(59, 130, 246, 0.25);
 }
 
 .learning {
@@ -15,4 +23,8 @@
   color: var(--color-text-muted);
   border-color: var(--color-border);
   font-style: italic;
+}
+
+[data-theme='dark'] .learning {
+  background-color: rgba(148, 163, 184, 0.08);
 }

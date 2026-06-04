@@ -12,11 +12,27 @@
 
 .card:hover {
   box-shadow: var(--shadow-md);
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+[data-theme='light'] .card:hover {
   border-color: rgba(29, 78, 216, 0.35);
 }
 
+[data-theme='dark'] .card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
 .featured {
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+[data-theme='light'] .featured {
   border-color: rgba(29, 78, 216, 0.2);
+}
+
+[data-theme='dark'] .featured {
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 .top {
@@ -46,12 +62,22 @@
   text-transform: uppercase;
   letter-spacing: 0.07em;
   color: var(--color-accent);
-  background-color: rgba(29, 78, 216, 0.08);
-  border: 1px solid rgba(29, 78, 216, 0.2);
+  background-color: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   border-radius: 999px;
   padding: 0.1rem 0.5rem;
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+[data-theme='light'] .featuredBadge {
+  background-color: rgba(29, 78, 216, 0.08);
+  border-color: rgba(29, 78, 216, 0.2);
+}
+
+[data-theme='dark'] .featuredBadge {
+  background-color: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 .links {
@@ -65,16 +91,32 @@
   color: var(--color-accent);
   font-weight: 500;
   padding: 0.2rem 0.55rem;
-  border: 1px solid rgba(29, 78, 216, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: var(--radius-sm);
   transition: background-color var(--transition), border-color var(--transition);
   white-space: nowrap;
 }
 
+[data-theme='light'] .link {
+  border-color: rgba(29, 78, 216, 0.3);
+}
+
+[data-theme='dark'] .link {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
 .link:hover {
-  background-color: rgba(29, 78, 216, 0.06);
+  background-color: rgba(59, 130, 246, 0.06);
   border-color: var(--color-accent);
   color: var(--color-accent-dark);
+}
+
+[data-theme='light'] .link:hover {
+  background-color: rgba(29, 78, 216, 0.06);
+}
+
+[data-theme='dark'] .link:hover {
+  background-color: rgba(59, 130, 246, 0.1);
 }
 
 .description {
@@ -129,13 +171,35 @@
 }
 
 .completed {
-  color: #15803d;
+  color: var(--color-success);
+  background-color: rgba(22, 163, 74, 0.08);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+[data-theme='light'] .completed {
   background-color: rgba(21, 128, 61, 0.08);
-  border: 1px solid rgba(21, 128, 61, 0.2);
+  border-color: rgba(21, 128, 61, 0.2);
+}
+
+[data-theme='dark'] .completed {
+  background-color: rgba(74, 222, 128, 0.08);
+  border-color: rgba(74, 222, 128, 0.2);
 }
 
 .in-progress {
+  color: var(--color-warning);
+  background-color: rgba(217, 119, 6, 0.08);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+[data-theme='light'] .in-progress {
   color: #b45309;
   background-color: rgba(180, 83, 9, 0.08);
-  border: 1px solid rgba(180, 83, 9, 0.2);
+  border-color: rgba(180, 83, 9, 0.2);
+}
+
+[data-theme='dark'] .in-progress {
+  color: #fbbf24;
+  background-color: rgba(250, 204, 21, 0.08);
+  border-color: rgba(250, 204, 21, 0.2);
 }
