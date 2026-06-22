@@ -6,8 +6,8 @@ export default function AboutSection() {
   return (
     <section id="about" className={styles.section}>
       <div className={styles.inner}>
-        <SectionTitle title="Sobre mí" />
-        <div className={styles.content}>
+        <SectionTitle title="Sobre mí" index={1} />
+        <div className={`${styles.content} reveal reveal-delay-1`}>
           <div className={styles.text}>
             {profile.about.map((paragraph, i) => (
               <p key={i} className={styles.paragraph}>{paragraph}</p>

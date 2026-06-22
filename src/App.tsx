@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import HeroSection from './sections/HeroSection';
@@ -10,6 +11,22 @@ import ServicesSection from './sections/ServicesSection';
 import ContactSection from './sections/ContactSection';
 
 function App() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <Header />

@@ -10,10 +10,13 @@ export default function ProjectsSection() {
         <SectionTitle
           title="Proyectos"
           subtitle="Proyectos propios desarrollados durante mi trayectoria"
+          index={5}
         />
         <div className={styles.grid}>
-          {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
+          {projects.map((project, i) => (
+            <div key={project.name} className={`reveal reveal-delay-${(i % 2) + 1}`}>
+              <ProjectCard project={project} />
+            </div>
           ))}
         </div>
       </div>

@@ -10,10 +10,13 @@ export default function ExperienceSection() {
         <SectionTitle
           title="Experiencia profesional"
           subtitle="Historial de trabajo relevante"
+          index={2}
         />
         <div className={styles.list}>
           {experience.map((item, i) => (
-            <ExperienceCard key={i} item={item} />
+            <div key={i} className={`reveal reveal-delay-${Math.min(i + 1, 4)}`}>
+              <ExperienceCard item={item} />
+            </div>
           ))}
         </div>
       </div>
