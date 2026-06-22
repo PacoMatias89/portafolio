@@ -20,6 +20,34 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 1.25rem 1.5rem;
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+
+.category:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.875rem;
+}
+
+.categoryIcon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.categoryIcon svg {
+  width: 16px;
+  height: 16px;
 }
 
 .categoryLabel {
@@ -29,7 +57,6 @@
   color: var(--color-accent);
   font-weight: 700;
   font-family: var(--font-mono);
-  margin-bottom: 0.875rem;
 }
 
 .badges {

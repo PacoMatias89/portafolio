@@ -4,6 +4,17 @@
   flex-direction: column;
 }
 
+.index {
+  order: -1;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  opacity: 0.65;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.2rem;
+}
+
 .line {
   order: 0;
   width: 32px;

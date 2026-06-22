@@ -7,10 +7,26 @@ import styles from './Header.module.css';
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+
+      const sectionIds = ['hero', ...navItems.map((item) => item.href.slice(1))];
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const { top, bottom } = el.getBoundingClientRect();
+        if (top <= 80 && bottom > 80) {
+          setActiveSection(id);
+          break;
+        }
+      }
+    };
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -43,7 +59,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className={styles.navLink}
+              className={`${styles.navLink} ${activeSection === item.href.slice(1) ? styles.navLinkActive : ''}`}
               onClick={closeMenu}
             >
               {item.label}

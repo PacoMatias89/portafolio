@@ -30,19 +30,54 @@
 
 .contactCard {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.875rem;
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 1rem 1.25rem;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
   color: inherit;
 }
 
 a.contactCard:hover {
   border-color: var(--color-accent);
   box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.contactIcon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(59, 130, 246, 0.08);
+  border-radius: var(--radius-md);
+  color: var(--color-accent);
+  flex-shrink: 0;
+  transition: background-color var(--transition);
+}
+
+[data-theme='light'] .contactIcon {
+  background-color: rgba(29, 78, 216, 0.07);
+}
+
+a.contactCard:hover .contactIcon {
+  background-color: rgba(59, 130, 246, 0.14);
+}
+
+.contactIcon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.contactText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
 }
 
 .contactLabel {

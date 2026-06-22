@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { profile } from '../data/profile';
 import styles from './HeroSection.module.css';
 
@@ -8,14 +9,35 @@ const focusAreas = [
   'Bases de datos relacionales y Data Warehouse',
 ];
 
+const FULL_ROLE = profile.role;
+
 export default function HeroSection() {
+  const [displayRole, setDisplayRole] = useState('');
+  const [typed, setTyped] = useState(false);
+
+  useEffect(() => {
+    let idx = 0;
+    const timer = setInterval(() => {
+      idx++;
+      setDisplayRole(FULL_ROLE.slice(0, idx));
+      if (idx >= FULL_ROLE.length) {
+        clearInterval(timer);
+        setTimeout(() => setTyped(true), 1200);
+      }
+    }, 55);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="hero" className={styles.section}>
       <div className={styles.inner}>
         <div>
           <p className={styles.greeting}>Hola, soy</p>
           <h1 className={styles.name}>{profile.name}</h1>
-          <h2 className={styles.role}>{profile.role}</h2>
+          <h2 className={styles.role}>
+            {displayRole}
+            <span className={`${styles.cursor} ${typed ? styles.cursorHide : ''}`} aria-hidden="true">|</span>
+          </h2>
           <p className={styles.specialization}>{profile.specialization}</p>
           <p className={styles.location}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -38,7 +60,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <aside className={styles.panel} aria-label="Áreas de especialización">
+        <aside className={`${styles.panel} reveal reveal-delay-3`} aria-label="Áreas de especialización">
           <p className={styles.panelHeading}>Especialización técnica</p>
           <ul className={styles.areaList}>
             {focusAreas.map((area) => (

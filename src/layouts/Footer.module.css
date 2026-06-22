@@ -15,6 +15,39 @@
   gap: 0.75rem;
 }
 
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.backToTop {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-card);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition), border-color var(--transition), background-color var(--transition), transform var(--transition);
+  flex-shrink: 0;
+}
+
+.backToTop:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent-light);
+  background-color: rgba(59, 130, 246, 0.06);
+  transform: translateY(-2px);
+}
+
+.backToTop svg {
+  width: 15px;
+  height: 15px;
+}
+
 .copy {
   font-size: 0.82rem;
   color: var(--color-text-muted);
