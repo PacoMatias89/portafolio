@@ -1,32 +1,36 @@
 .wrapper {
   margin-bottom: 3rem;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 .index {
-  order: -1;
+  position: absolute;
+  right: -0.5rem;
+  top: -1.5rem;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  opacity: 0.65;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.2rem;
+  font-size: clamp(5rem, 10vw, 8rem);
+  font-weight: 900;
+  line-height: 1;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
 }
 
 .line {
-  order: 0;
-  width: 32px;
+  width: 40px;
   height: 3px;
-  background-color: var(--color-accent);
+  background: var(--gradient-accent);
   border-radius: 2px;
   margin-bottom: 0.875rem;
 }
 
 .title {
-  order: 1;
-  font-size: 1.875rem;
+  font-size: clamp(1.75rem, 3.5vw, 2.1rem);
   font-weight: 700;
   color: var(--color-text);
   letter-spacing: -0.02em;
@@ -34,7 +38,6 @@
 }
 
 .subtitle {
-  order: 2;
   font-size: 0.95rem;
   color: var(--color-text-muted);
   max-width: 520px;

@@ -11,12 +11,12 @@ export default function SectionTitle({ title, subtitle, index }: Props) {
     <div className={`${styles.wrapper} reveal`}>
       {index !== undefined && (
         <span className={styles.index} aria-hidden="true">
-          {String(index).padStart(2, '0')}.
+          {String(index).padStart(2, '0')}
         </span>
       )}
+      <div className={styles.line} />
       <h2 className={styles.title}>{title}</h2>
       {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
-      <div className={styles.line} />
     </div>
   );
 }
