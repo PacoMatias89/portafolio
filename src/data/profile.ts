@@ -8,7 +8,8 @@ export const profile = {
   website: 'franciscomolina.me',
   github: 'https://github.com/PacoMatias89',
   githubUser: 'PacoMatias89',
-  linkedin: 'https://linkedin.com/in/francisco-molina-jurado',
+  linkedin: 'https://www.linkedin.com/in/francisco-mat%C3%ADas-molina-jurado/',
+  linkedinUser: 'francisco-matías-molina-jurado',
   about: [
     'Soy desarrollador Back-End con experiencia en Java, Spring Boot, Python e integración de datos. He trabajado en el diseño y desarrollo de APIs REST, procesos ETL, modelado de bases de datos relacionales y construcción de Data Warehouses.',
     'Mi trayectoria combina trabajo autónomo en desarrollo de aplicaciones para pequeñas y medianas empresas con mi posición actual en Softtek, donde participo en proyectos de integración y análisis de datos.',
