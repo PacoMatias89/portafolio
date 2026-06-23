@@ -104,9 +104,15 @@ a.contactCard:hover .contactIcon {
   word-break: break-all;
 }
 
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  align-items: center;
+}
+
 .cta {
   display: inline-flex;
-  align-self: flex-start;
   align-items: center;
   gap: 0.5rem;
   padding: 0.875rem 2.25rem;
@@ -126,8 +132,47 @@ a.contactCard:hover .contactIcon {
   transform: translateY(-2px);
 }
 
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-accent);
+  transition: all var(--transition);
+}
+
+.ctaSecondary svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.ctaSecondary:hover {
+  background: var(--gradient-accent);
+  border-color: transparent;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
 @media (max-width: 480px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta,
+  .ctaSecondary {
+    text-align: center;
+    justify-content: center;
   }
 }
