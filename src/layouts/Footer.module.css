@@ -25,32 +25,36 @@
   width: 34px;
   height: 34px;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   background: var(--color-bg-card);
   color: var(--color-text-muted);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color var(--transition), border-color var(--transition), background-color var(--transition), transform var(--transition);
+  transition: color var(--transition), border-color var(--transition), background var(--transition), transform var(--transition);
   flex-shrink: 0;
 }
 
 .backToTop:hover {
   color: var(--color-accent);
-  border-color: var(--color-accent-light);
-  background-color: rgba(59, 130, 246, 0.06);
+  border-color: var(--color-accent);
+  background: rgba(79, 70, 229, 0.06);
   transform: translateY(-2px);
 }
 
+[data-theme='dark'] .backToTop:hover {
+  background: rgba(129, 140, 248, 0.08);
+}
+
 .backToTop svg {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
 }
 
 .copy {
   font-size: 0.82rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-subtle);
 }
 
 .links {
@@ -62,6 +66,7 @@
   font-size: 0.82rem;
   color: var(--color-text-muted);
   font-weight: 500;
+  transition: color var(--transition);
 }
 
 .links a:hover {

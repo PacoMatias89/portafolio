@@ -1,12 +1,12 @@
 .wrapper {
-  margin-bottom: 3rem;
+  margin-bottom: 3.25rem;
   position: relative;
 }
 
 .index {
   position: absolute;
-  right: -0.5rem;
-  top: -1.5rem;
+  right: 0;
+  top: -2rem;
   font-family: var(--font-mono);
   font-size: clamp(5rem, 10vw, 8rem);
   font-weight: 900;
@@ -15,31 +15,37 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  opacity: 0.07;
+  color: transparent;
+  opacity: 0.06;
   pointer-events: none;
   user-select: none;
   letter-spacing: -0.05em;
 }
 
+[data-theme='dark'] .index {
+  opacity: 0.09;
+}
+
 .line {
-  width: 40px;
+  width: 36px;
   height: 3px;
   background: var(--gradient-accent);
-  border-radius: 2px;
-  margin-bottom: 0.875rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
 }
 
 .title {
-  font-size: clamp(1.75rem, 3.5vw, 2.1rem);
-  font-weight: 700;
+  font-size: clamp(1.85rem, 3.5vw, 2.25rem);
+  font-weight: 800;
   color: var(--color-text);
-  letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.625rem;
+  line-height: 1.2;
 }
 
 .subtitle {
   font-size: 0.95rem;
   color: var(--color-text-muted);
-  max-width: 520px;
+  max-width: 52ch;
   line-height: 1.7;
 }
