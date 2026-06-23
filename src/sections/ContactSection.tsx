@@ -64,7 +64,7 @@ export default function ContactSection() {
               <span className={styles.contactIcon}>{linkedinIcon}</span>
               <div className={styles.contactText}>
                 <span className={styles.contactLabel}>LinkedIn</span>
-                <span className={styles.contactValue}>francisco-molina-jurado</span>
+                <span className={styles.contactValue}>{profile.linkedinUser}</span>
               </div>
             </a>
             <a
