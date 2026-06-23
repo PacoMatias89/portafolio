@@ -32,15 +32,18 @@ export default function HeroSection() {
     <section id="hero" className={styles.section}>
       <div className={styles.inner}>
         <div>
-          <p className={styles.greeting}>Hola, soy</p>
-          <h1 className={styles.name}>{profile.name}</h1>
+          <p className={styles.eyebrow}>Hola, soy</p>
+          <h1 className={styles.name}>
+            {profile.name.split(' ')[0]}
+            <span className={styles.nameHighlight}>{' ' + profile.name.split(' ').slice(1).join(' ')}</span>
+          </h1>
           <h2 className={styles.role}>
             {displayRole}
             <span className={`${styles.cursor} ${typed ? styles.cursorHide : ''}`} aria-hidden="true">|</span>
           </h2>
           <p className={styles.specialization}>{profile.specialization}</p>
           <p className={styles.location}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
@@ -61,6 +64,7 @@ export default function HeroSection() {
         </div>
 
         <aside className={`${styles.panel} reveal reveal-delay-3`} aria-label="Áreas de especialización">
+          <div className={styles.panelGlow} aria-hidden="true" />
           <p className={styles.panelHeading}>Especialización técnica</p>
           <ul className={styles.areaList}>
             {focusAreas.map((area) => (
