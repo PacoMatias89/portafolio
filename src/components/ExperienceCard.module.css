@@ -2,14 +2,21 @@
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 1.75rem 1.75rem 1.75rem 2rem;
+  padding: 1.75rem 1.75rem 1.75rem 2.25rem;
   position: relative;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition);
+  transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md), 0 0 0 1px rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.25);
+  transform: translateY(-2px);
+}
+
+[data-theme='light'] .card:hover {
+  box-shadow: var(--shadow-md), 0 0 0 1px rgba(29, 78, 216, 0.1);
+  border-color: rgba(29, 78, 216, 0.2);
 }
 
 .card::before {
@@ -19,7 +26,7 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background-color: var(--color-accent);
+  background: var(--gradient-accent);
   border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 }
 
@@ -34,14 +41,18 @@
 
 .role {
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text);
   margin-bottom: 0.25rem;
 }
 
 .company {
   font-size: 0.9rem;
-  color: var(--color-accent);
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   font-weight: 600;
 }
 
@@ -81,7 +92,7 @@
 }
 
 .bullet {
-  color: var(--color-accent);
+  color: var(--color-accent-secondary);
   flex-shrink: 0;
   margin-top: 0.05rem;
   font-size: 0.75rem;

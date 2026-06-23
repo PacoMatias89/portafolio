@@ -33,18 +33,40 @@
   flex-direction: row;
   align-items: center;
   gap: 0.875rem;
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 1rem 1.25rem;
   transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
   color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient-accent);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+a.contactCard:hover::before {
+  opacity: 1;
 }
 
 a.contactCard:hover {
-  border-color: var(--color-accent);
-  box-shadow: var(--shadow-sm);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
+}
+
+[data-theme='light'] a.contactCard:hover {
+  border-color: rgba(29, 78, 216, 0.25);
 }
 
 .contactIcon {
@@ -53,19 +75,20 @@ a.contactCard:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(59, 130, 246, 0.08);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.07) 100%);
   border-radius: var(--radius-md);
   color: var(--color-accent);
   flex-shrink: 0;
-  transition: background-color var(--transition);
+  transition: background var(--transition), box-shadow var(--transition);
 }
 
 [data-theme='light'] .contactIcon {
-  background-color: rgba(29, 78, 216, 0.07);
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.08) 0%, rgba(8, 145, 178, 0.05) 100%);
 }
 
 a.contactCard:hover .contactIcon {
-  background-color: rgba(59, 130, 246, 0.14);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.18) 0%, rgba(6, 182, 212, 0.12) 100%);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
 }
 
 .contactIcon svg {
@@ -81,11 +104,12 @@ a.contactCard:hover .contactIcon {
 }
 
 .contactLabel {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
   color: var(--color-text-muted);
-  font-weight: 600;
+  font-weight: 700;
+  font-family: var(--font-mono);
 }
 
 .contactValue {
@@ -98,36 +122,25 @@ a.contactCard:hover .contactIcon {
 .cta {
   display: inline-flex;
   align-self: flex-start;
-  padding: 0.75rem 2rem;
-  background-color: var(--color-accent);
+  padding: 0.8rem 2.25rem;
+  background: var(--gradient-accent);
   color: #fff;
   font-weight: 600;
   font-size: 0.9rem;
   border-radius: var(--radius-md);
-  transition: background-color var(--transition), box-shadow var(--transition);
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  transition: box-shadow var(--transition), filter var(--transition), transform var(--transition);
+  box-shadow: 0 3px 12px rgba(59, 130, 246, 0.35);
 }
 
 [data-theme='light'] .cta {
-  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.2);
-}
-
-[data-theme='dark'] .cta {
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 3px 12px rgba(29, 78, 216, 0.28);
 }
 
 .cta:hover {
-  background-color: var(--color-accent-dark);
   color: #fff;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
-}
-
-[data-theme='light'] .cta:hover {
-  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
-}
-
-[data-theme='dark'] .cta:hover {
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  filter: brightness(1.12);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 480px) {

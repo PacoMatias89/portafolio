@@ -1,10 +1,16 @@
 .section {
   padding: 7rem 1.5rem 5.5rem;
-  background: linear-gradient(155deg, #f8faff 0%, #eef3fb 60%, #f1f5f9 100%);
+  background:
+    radial-gradient(ellipse 80% 55% at 10% 30%, rgba(29, 78, 216, 0.1) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 45% at 85% 75%, rgba(8, 145, 178, 0.08) 0%, transparent 55%),
+    linear-gradient(155deg, #f4f8ff 0%, #eaf1fb 60%, #f1f5f9 100%);
 }
 
 [data-theme='dark'] .section {
-  background: linear-gradient(155deg, #0f172a 0%, #1a1f3a 60%, #1e2749 100%);
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 25%, rgba(59, 130, 246, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 75%, rgba(6, 182, 212, 0.12) 0%, transparent 55%),
+    linear-gradient(155deg, #0a0f1e 0%, #0f172a 60%, #131d35 100%);
 }
 
 .inner {
@@ -18,35 +24,41 @@
 
 .greeting {
   font-size: 0.875rem;
-  color: var(--color-accent);
+  color: var(--color-accent-secondary);
   font-family: var(--font-mono);
   font-weight: 500;
   margin-bottom: 0.875rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .name {
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
-  font-weight: 700;
-  color: var(--color-text);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   letter-spacing: -0.03em;
   margin-bottom: 0.625rem;
-  line-height: 1.1;
+  line-height: 1.08;
 }
 
 .role {
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   margin-bottom: 1rem;
+  min-height: 1.8rem;
 }
 
 .specialization {
   font-size: 0.875rem;
-  color: var(--color-accent);
+  color: var(--color-text-muted);
   font-family: var(--font-mono);
   margin-bottom: 1.25rem;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 .location {
@@ -60,6 +72,7 @@
 
 .location svg {
   flex-shrink: 0;
+  color: var(--color-accent-secondary);
 }
 
 .actions {
@@ -69,14 +82,14 @@
 }
 
 .btnPrimary {
-  padding: 0.7rem 1.75rem;
-  background-color: var(--color-accent);
+  padding: 0.72rem 1.75rem;
+  background: var(--gradient-accent);
   color: #fff;
   font-weight: 600;
   font-size: 0.9rem;
   border-radius: var(--radius-md);
-  transition: background-color var(--transition), box-shadow var(--transition);
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+  transition: box-shadow var(--transition), filter var(--transition);
+  box-shadow: var(--shadow-glow);
   position: relative;
   overflow: hidden;
 }
@@ -88,7 +101,7 @@
   left: -100%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   animation: shimmer 2.8s ease-in-out infinite;
 }
 
@@ -97,72 +110,78 @@
   60%, 100% { left: 150%; }
 }
 
-[data-theme='light'] .btnPrimary {
-  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
-}
-
-[data-theme='dark'] .btnPrimary {
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.35);
-}
-
 .btnPrimary:hover {
-  background-color: var(--color-accent-dark);
   color: #fff;
-  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
-}
-
-[data-theme='light'] .btnPrimary:hover {
-  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
-}
-
-[data-theme='dark'] .btnPrimary:hover {
-  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  filter: brightness(1.1);
+  box-shadow: 0 8px 32px var(--color-glow), 0 4px 12px var(--color-glow-secondary);
 }
 
 .btnSecondary {
-  padding: 0.7rem 1.75rem;
+  padding: 0.72rem 1.75rem;
   border: 1.5px solid var(--color-accent);
   color: var(--color-accent);
   font-weight: 600;
   font-size: 0.9rem;
   border-radius: var(--radius-md);
-  transition: background-color var(--transition), color var(--transition);
+  transition: all var(--transition);
 }
 
 .btnSecondary:hover {
-  background-color: var(--color-accent);
+  background: var(--gradient-accent);
+  border-color: transparent;
   color: #fff;
+  box-shadow: var(--shadow-glow);
 }
 
 .btnGhost {
-  padding: 0.7rem 1.25rem;
+  padding: 0.72rem 1.25rem;
   color: var(--color-text-muted);
   font-size: 0.9rem;
   font-weight: 500;
   border-radius: var(--radius-md);
   border: 1.5px solid var(--color-border);
-  transition: color var(--transition), border-color var(--transition);
+  transition: color var(--transition), border-color var(--transition), background-color var(--transition);
 }
 
 .btnGhost:hover {
   color: var(--color-accent);
   border-color: var(--color-accent);
+  background-color: rgba(59, 130, 246, 0.05);
 }
 
 /* Right panel */
 .panel {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: 1.75rem;
   box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+}
+
+[data-theme='dark'] .panel {
+  background: rgba(19, 29, 53, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: rgba(59, 130, 246, 0.15);
 }
 
 .panelHeading {
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.12em;
   color: var(--color-text-muted);
   margin-bottom: 1.25rem;
   font-family: var(--font-mono);
@@ -186,12 +205,12 @@
 }
 
 .areaDot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background-color: var(--color-accent);
+  background: var(--gradient-accent);
   flex-shrink: 0;
-  margin-top: 0.35rem;
+  margin-top: 0.42rem;
 }
 
 .availability {
@@ -229,7 +248,7 @@
 
 .cursor {
   display: inline-block;
-  color: var(--color-accent);
+  color: var(--color-accent-secondary);
   font-weight: 300;
   margin-left: 2px;
   animation: blink 0.85s ease-in-out infinite;

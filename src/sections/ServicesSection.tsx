@@ -50,7 +50,7 @@ export default function ServicesSection() {
         />
         <div className={styles.grid}>
           {services.map((service, i) => (
-            <article key={i} className={`${styles.card} reveal reveal-delay-${(i % 3) + 1}`}>
+            <article key={i} className={`${styles.card} reveal reveal-delay-${(i % 3) + 1}`} data-number={String(i + 1).padStart(2, '0')}>
               <div className={styles.iconWrapper}>
                 {serviceIcons[i]}
               </div>
