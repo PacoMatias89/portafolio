@@ -15,6 +15,14 @@ const githubIcon = (
   </svg>
 );
 
+const linkedinIcon = (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
 const locationIcon = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -22,11 +30,11 @@ const locationIcon = (
   </svg>
 );
 
-const webIcon = (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" />
-    <line x1="2" y1="12" x2="22" y2="12" />
-    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+const downloadIcon = (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" y1="15" x2="12" y2="3"/>
   </svg>
 );
 
@@ -36,17 +44,27 @@ export default function ContactSection() {
       <div className={styles.inner}>
         <SectionTitle title="Contacto" index={7} />
         <div className={`${styles.content} reveal reveal-delay-1`}>
-          <div className={styles.text}>
-            <p className={styles.lead}>
-              Si tienes un proyecto, una propuesta de colaboración o simplemente quieres hablar sobre tecnología, estoy disponible.
-            </p>
-          </div>
+          <p className={styles.lead}>
+            Si tienes un proyecto, una propuesta de colaboración o simplemente quieres hablar sobre tecnología, estoy disponible.
+          </p>
           <div className={styles.cards}>
             <a href={`mailto:${profile.email}`} className={styles.contactCard}>
               <span className={styles.contactIcon}>{emailIcon}</span>
               <div className={styles.contactText}>
                 <span className={styles.contactLabel}>Email</span>
                 <span className={styles.contactValue}>{profile.email}</span>
+              </div>
+            </a>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.contactCard}
+            >
+              <span className={styles.contactIcon}>{linkedinIcon}</span>
+              <div className={styles.contactText}>
+                <span className={styles.contactLabel}>LinkedIn</span>
+                <span className={styles.contactValue}>francisco-molina-jurado</span>
               </div>
             </a>
             <a
@@ -68,24 +86,20 @@ export default function ContactSection() {
                 <span className={styles.contactValue}>{profile.location}</span>
               </div>
             </div>
-            <div className={styles.contactCard}>
-              <span className={styles.contactIcon}>{webIcon}</span>
-              <div className={styles.contactText}>
-                <span className={styles.contactLabel}>Web</span>
-                <a
-                  href={`https://${profile.website}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.contactValue}
-                >
-                  {profile.website}
-                </a>
-              </div>
-            </div>
           </div>
-          <a href={`mailto:${profile.email}`} className={styles.cta}>
-            Enviar un email
-          </a>
+          <div className={styles.actions}>
+            <a href={`mailto:${profile.email}`} className={styles.cta}>
+              Enviar un email
+            </a>
+            <a
+              href="/cv-francisco-molina.pdf"
+              download
+              className={styles.ctaSecondary}
+            >
+              {downloadIcon}
+              Descargar CV
+            </a>
+          </div>
         </div>
       </div>
     </section>

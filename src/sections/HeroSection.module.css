@@ -178,19 +178,26 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.8rem 2rem;
-  border: 1.5px solid var(--color-border-strong);
-  color: var(--color-text);
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-accent);
   font-weight: 600;
   font-size: 0.9rem;
   border-radius: 999px;
   transition: all var(--transition);
-  background: var(--color-bg-card);
+  background: transparent;
+}
+
+.btnSecondary svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
 }
 
 .btnSecondary:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  background: var(--gradient-accent-soft);
+  background: var(--gradient-accent);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: var(--shadow-glow);
 }
 
 .btnGhost {
