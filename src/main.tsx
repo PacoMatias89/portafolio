@@ -1,13 +1,23 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { ThemeProvider } from './contexts/ThemeContext'
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!
+
+const app = (
   <StrictMode>
     <ThemeProvider>
       <App />
     </ThemeProvider>
-  </StrictMode>,
+  </StrictMode>
 )
+
+// En producción el HTML llega pre-renderizado (SSG) y solo hidratamos.
+// En desarrollo el root está vacío, así que renderizamos desde cero.
+if (root.hasChildNodes()) {
+  hydrateRoot(root, app)
+} else {
+  createRoot(root).render(app)
+}
